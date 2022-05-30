@@ -27,7 +27,7 @@ const routes: TRoute[] = [
   {path: '/films/:id', element: <Item />},
   {path: '/saved', element: <Saved />, link: 'Saved'},
   {path: '/saved/:id', element: <Item />},
-  {path: '/boxOffice', element: <BoxOffice />, link: 'BoxOffice'},
+  {path: '/boxOffice', element: <BoxOffice />, link: 'Box Office'},
   {path: '/boxOffice/:id', element: <Item />},
   {path: '/comingSoon', element: <ComingSoon />, link: 'Coming Soon'},
   {path: '/comingSoon/:id', element: <Item />},
