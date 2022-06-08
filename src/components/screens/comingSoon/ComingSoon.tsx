@@ -8,13 +8,12 @@ import { filterByTitle } from '../../../functions';
 import ItemList from '../../shared/itemList/ItemList';
 import CenteredLoader from '../../shared/loader/CenteredLoader';
 import ScrollToTopBtn from '../../shared/scrollToTop/ScrollToTopBtn';
+import { apiKey } from '../../../constants';
 
 const ComingSoon = (): JSX.Element => {
     const [title, Input] = useInput()
     
     //* fetching coming soon
-    const apiKey = process.env.REACT_APP_API_KEY
-
     const { data, error } = useFetch<TComingSoonItems>(`https://imdb-api.com/API/ComingSoon/${apiKey}`)
 
     return (

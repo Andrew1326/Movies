@@ -34,15 +34,7 @@ const ItemControls = ({data}: {data: TData}): JSX.Element => {
     }
 
     //* get item state
-    const getItemState = (data: TData): 'saved' | 'not saved' => {
-        let alreadyIncludes: boolean
-  
-        if (saved.length > 1) alreadyIncludes = saved.filter(el => el.id === data.id).length > 0
-        else if (saved.length > 0) alreadyIncludes = saved[0].id === data.id
-        else alreadyIncludes = false
-  
-        return !alreadyIncludes ? 'not saved' : 'saved'
-    }
+    const getItemState = (data: TData): 'saved' | 'not saved' => saved.filter(el => el.id === data.id).length > 0 ? 'saved' : 'not saved'
 
     //* add to saved
     const addToSaved = (data: TData) => () => {

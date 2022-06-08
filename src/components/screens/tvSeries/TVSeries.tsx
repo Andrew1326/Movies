@@ -9,13 +9,12 @@ import useInput from '../../../hooks/useInput';
 import ItemList from '../../shared/itemList/ItemList';
 import CenteredLoader from '../../shared/loader/CenteredLoader';
 import ScrollToTopBtn from '../../shared/scrollToTop/ScrollToTopBtn';
+import { apiKey } from '../../../constants';
 
 const TVSeries = (): JSX.Element => {
     const [title, Input] = useInput()
 
     //* fetching TVs
-    const apiKey = process.env.REACT_APP_API_KEY
-
     const { data: mostPopularTVs, error: mostPopularTVsErr } = useFetch<TMostPopularItems>(`https://imdb-api.com/API/MostPopularTVs/${apiKey}`)
 
     const { data: top250TVs, error: top250TVsErr } = useFetch<TTop250Items>(`https://imdb-api.com/API/Top250TVs/${apiKey}`)

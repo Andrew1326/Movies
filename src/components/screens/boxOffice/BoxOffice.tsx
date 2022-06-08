@@ -8,13 +8,12 @@ import { filterByTitle } from '../../../functions';
 import ItemList from '../../shared/itemList/ItemList';
 import CenteredLoader from '../../shared/loader/CenteredLoader';
 import ScrollToTopBtn from '../../shared/scrollToTop/ScrollToTopBtn';
+import { apiKey } from '../../../constants';
 
 const BoxOffice = (): JSX.Element => {
     const [title, Input] = useInput()
 
     //* fetching box office
-    const apiKey = process.env.REACT_APP_API_KEY
-
     const { data, error } = useFetch<TBoxOfficeItems>(`https://imdb-api.com/API/BoxOffice/${apiKey}`)
 
     return (

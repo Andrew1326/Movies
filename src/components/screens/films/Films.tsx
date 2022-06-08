@@ -8,13 +8,12 @@ import useInput from '../../../hooks/useInput';
 import ItemList from '../../shared/itemList/ItemList';
 import CenteredLoader from '../../shared/loader/CenteredLoader';
 import ScrollToTopBtn from '../../shared/scrollToTop/ScrollToTopBtn';
+import { apiKey } from '../../../constants';
 
 const Films = (): JSX.Element => {
     const [title, Input] = useInput()
 
     //* fetching films
-    const apiKey = process.env.REACT_APP_API_KEY
-
     const { data: mostPopularFilms, error: mostPopularFilmsErr } = useFetch<TMostPopularItems>(`https://imdb-api.com/API/MostPopularMovies/${apiKey}`)
 
     const { data: top250Films, error: top250FilmsErr } = useFetch<TTop250Items>(`https://imdb-api.com/API/Top250Movies/${apiKey}`)

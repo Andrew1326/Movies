@@ -9,6 +9,7 @@ import ScrollToTopBtn from '../../shared/scrollToTop/ScrollToTopBtn';
 import ServerErr from '../../shared/serverErr/ServerErr';
 import { TResults } from './SearchResultTypes';
 import Alert from '../../shared/alert/Alert';
+import { apiKey } from '../../../constants';
 
 const SearchResults = (): JSX.Element => {
     const [title, Input] = useInput()
@@ -18,8 +19,6 @@ const SearchResults = (): JSX.Element => {
     const searchParams = url.slice(url.indexOf('?')+1).replaceAll('%2C', ',')
 
     //* fetching with params
-    const apiKey = process.env.REACT_APP_API_KEY
-
     const { data, error } = useFetch<TResults>(`https://imdb-api.com/API/AdvancedSearch/${apiKey}?${searchParams}`)
 
     return (

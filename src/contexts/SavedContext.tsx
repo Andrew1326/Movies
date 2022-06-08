@@ -2,7 +2,7 @@ import React, { createContext, useContext } from 'react';
 import { TItem } from '../appTypes';
 import useLocalStorage from '../hooks/useLocalStorage';
 
-//* create contexts
+//* creating contexts
 const SavedContext = createContext<TItem[]>([])
 const SavedUpdateContext = createContext<any>(null)
 
