@@ -17,8 +17,8 @@ const Offcanvas = ({isOpen, onClose}: DrawerProps): JSX.Element => {
                 <Heading fontSize='lg'>Pages:</Heading>
                 <CloseIcon w='3' h='3' _hover={{cursor: 'pointer'}} onClick={onClose} />
               </Flex>
-            <VStack>
-              <Links links={links} />
+            <VStack spacing='7%'>
+              <Links links={links} closeOffcanvas={onClose} />
             </VStack>
             </Box>
             </VStack>

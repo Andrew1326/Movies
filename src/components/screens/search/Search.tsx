@@ -67,13 +67,13 @@ const Search = (): JSX.Element => {
                     <FormControl>
                         <FormLabel htmlFor='rating'>Rating</FormLabel>
                         <HStack>
-                        <Select {...register('minRating')}>
+                        <Select textAlign='center' {...register('minRating')}>
                             {
                                 rating.map((el, i) => <option key={i} value={el}>{el}</option>)
                             }
                         </Select>
                         <Text fontSize='sm'>to</Text>
-                        <Select {...register('maxRating')}>
+                        <Select textAlign='center' {...register('maxRating')}>
                             {
                                 rating.reverse().map((el, i) => <option key={i} value={el}>{el}</option>)
                             }
@@ -85,11 +85,11 @@ const Search = (): JSX.Element => {
                 name='genres'
                 control={control}
                 render={({field: {onChange, onBlur, value, ref}}) => <Box m='2% 0 0 0'>
-                    <CheckboxGroup colorScheme='green' value={value} onChange={onChange}>
+                    <CheckboxGroup value={value} onChange={onChange}>
                     <FormLabel htmlFor='genres'>Genres</FormLabel>
                     <Flex direction='row' flexWrap='wrap'>
                         {
-                            genres.map((el, i) => <Checkbox m='0.5%' key={i} value={el} ref={ref} onBlur={onBlur}>{el}</Checkbox>)
+                            genres.map((el, i) => <Checkbox m={['1%', '0.5%', '0.5%']} key={i} value={el} ref={ref} onBlur={onBlur}>{el}</Checkbox>)
                         }
                     </Flex>
                 </CheckboxGroup>
@@ -99,11 +99,11 @@ const Search = (): JSX.Element => {
                 name='companies'
                 control={control}
                 render={({field: {onChange, onBlur, value, ref}}) => <Box m='2% 0 0 0'>
-                <CheckboxGroup colorScheme='green' value={value} onChange={onChange}>
+                <CheckboxGroup value={value} onChange={onChange}>
                     <FormLabel htmlFor='companies'>Companies</FormLabel>
                     <Flex direction='row' flexWrap='wrap'>
                     {
-                        companies.map((el, i) => <Checkbox m='0.5%' key={i} value={el} ref={ref} onBlur={onBlur}>{el}</Checkbox>)
+                        companies.map((el, i) => <Checkbox m={['1%', '0.5%', '0.5%']} key={i} value={el} ref={ref} onBlur={onBlur}>{el}</Checkbox>)
                     }
                 </Flex>
             </CheckboxGroup>
@@ -127,8 +127,8 @@ const Search = (): JSX.Element => {
                     </FormControl>}
                     />
                 </HStack>
-                <Center m='2% 0 0 0'>
-                    <Button type='submit'>search films</Button>
+                <Center mt={['6%', '2%', '2%']}>
+                    <Button type='submit' w='100%' size='md'>search films</Button>
                 </Center>
                 </form>
             </VStack>

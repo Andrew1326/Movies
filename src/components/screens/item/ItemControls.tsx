@@ -51,9 +51,9 @@ const ItemControls = ({data}: {data: TData}): JSX.Element => {
     return (
         <Box p='4% 2% 2% 2%'>
         {
-            getItemState(data) === 'not saved' ? <Button w='95%' onClick={addToSaved(data)}><AddIcon w={3} h={3} /></Button>
+            getItemState(data) === 'not saved' ? <Button w='100%' onClick={addToSaved(data)}><AddIcon w={3} h={3} /></Button>
             :
-            <Button w='95%' onClick={deleteFromSaved(data)}><DeleteIcon w='3' h='3' /></Button>
+            <Button w='100%' onClick={deleteFromSaved(data)}><DeleteIcon w='3' h='3' /></Button>
         }
         </Box>
     )

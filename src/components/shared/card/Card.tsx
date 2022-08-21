@@ -14,8 +14,8 @@ const Card = ({item}: { item: TItem }): JSX.Element => {
     return (
         <Box w={['40%', '20%', '15%', '13%', '12%']} h='auto' overflow='hidden' m='1%' _hover={{cursor: 'pointer'}}>
             <Box onClick={navigateToItem}>
-                <Image src={item.image} alt='film image' w='100%' h='250px' loading='lazy' />
-                <Heading marginTop='4%' as='h4' size='md'>{item.title}</Heading>
+                <Image src={item.image} alt='film image' w='100%' h={['190px', '200px', '250px']} loading='lazy' />
+                <Heading marginTop='4%' as='h4' size='md' h='25px' overflow='hidden' textOverflow='ellipsis'>{item.title}</Heading>
             </Box>
             <ItemControls data={item} />
         </Box>

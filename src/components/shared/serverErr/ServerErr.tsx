@@ -7,7 +7,7 @@ import Video from '../video/Video';
 const ServerErr = ({title, description}: TMyAlertProps): JSX.Element => {
     return (
         <VStack>
-            <Alert status='error' title={title} description={description} h='100px' maxW='800px' m='2% 0 0 0' />
+            <Alert status='error' title={title} description={description} h='100px' w='100%' m='2% 0 0 0' />
             <Video src={require('../../../videos/server_err.mp4')} />
         </VStack>
     )

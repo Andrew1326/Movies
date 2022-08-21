@@ -5,7 +5,7 @@ import Video from '../../shared/video/Video';
 const Home = (): JSX.Element => {
 
     //* advantages
-    const advantages: string[] = ['Newest films and Tvs', 'All is free', 'It finds films in good quality', 'It includes advanced search', 'You can tracking box office']
+    const advantages: string[] = ['Newest films and Tvs', 'Big functionality and all is free', 'Films in good quality', 'Advanced search', 'Tracking box office option']
 
     return (
         <Box w='100%' p='0 4% 2% 4%' marginTop={['18%', '10%', '5%']}>
@@ -19,7 +19,7 @@ const Home = (): JSX.Element => {
                         <UnorderedList>
                             {
                                 advantages.map((el, i: number) => <ListItem key={i} m='4% 0 4% 0'>
-                                    <Text fontSize='3xl'>{el}</Text>
+                                    <Text fontSize={['2xl', '3xl', '3xl']}>{el}</Text>
                                 </ListItem>)
                             }
                         </UnorderedList>
