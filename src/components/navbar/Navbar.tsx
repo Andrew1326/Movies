@@ -25,7 +25,7 @@ const Navbar = (): JSX.Element => {
             <Flex justify='space-between' alignItems='center' w='100%'>
                 <Flex flexDirection='row' w='10%'>
                     {
-                        isSmallerThan768 && <Flex justify='center' align='center' mr='30%' w='40px' _hover={{cursor: 'pointer'}} onClick={isOpen ? onClose : onOpen}>
+                        isSmallerThan768 && <Flex justify='center' align='center' mr='30%' w='40px' _hover={{cursor: 'pointer'}} onClick={onOpen}>
                         <HamburgerIcon w='5' h='5'  />
                     </Flex>
                     }
