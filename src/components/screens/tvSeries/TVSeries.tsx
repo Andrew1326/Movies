@@ -4,7 +4,7 @@ import useFetch from '../../../hooks/useFetch';
 import { TMostPopularItems, TTop250Items } from '../../../appTypes';
 import { VStack, Heading } from '@chakra-ui/react';
 import ServerErr from '../../shared/serverErr/ServerErr';
-import { filterByTitle, shuffle, removeSameById } from '../../../functions';
+import { filterByTitle, removeSameById } from '../../../functions';
 import useInput from '../../../hooks/useInput';
 import ItemList from '../../shared/itemList/ItemList';
 import CenteredLoader from '../../shared/loader/CenteredLoader';
@@ -27,7 +27,7 @@ const TVSeries = (): JSX.Element => {
                         <Heading size='xl'>Big collection of TV series!</Heading>
                         {Input}
                     </VStack>
-                    <ItemList items={filterByTitle(shuffle(removeSameById([...mostPopularTVs.items, ...top250TVs.items])), title)} />
+                    <ItemList items={filterByTitle(removeSameById([...mostPopularTVs.items, ...top250TVs.items]), title)} />
                     {
                         removeSameById([...mostPopularTVs.items, ...top250TVs.items]).length > 0 && <ScrollToTopBtn />
                     }

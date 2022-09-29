@@ -1,17 +1,6 @@
 import { TItem } from "./appTypes";
 import { TIdName, TKeyValue } from "./appTypes";
 
-//* shuffle arr
-export const shuffle = (arr: any[]): any[] => {
-  for (let i = arr.length - 1; i > 0; i--) {
-
-    let j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-
-  return arr
-}
-
 //* remove films duplicates
 export const removeSameById = (arr: TItem[]): TItem[] => {
   const ids = arr.map(el => el.id);
