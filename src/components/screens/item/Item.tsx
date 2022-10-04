@@ -1,21 +1,30 @@
 import { Box, Image, Heading, Text, Stack, HStack, VStack, Flex, Tooltip } from '@chakra-ui/react';
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import { useParams } from 'react-router-dom';
 import useFetch from '../../../hooks/useFetch';
 import { TItemData } from './itemTypes';
 import ServerErr from '../../shared/serverErr/ServerErr';
 import Loader from '../../shared/loader/Loader';
-import { createListItem, createListHeading, viewDataInWikipedia } from '../../../functions';
+import { createListItem, createListHeading } from '../../../functions';
 import ResponsiveEmbed from 'react-responsive-embed';
 import ItemControls from './ItemControls';
+import useWindow from '../../../hooks/useWindow';
 
 const Item = (): JSX.Element => {
+
+    const setUrlData = useWindow()
 
     //* fetching item critics
     const { id } = useParams()
     const apiKey = process.env.REACT_APP_API_KEY
 
     const { data, error } = useFetch<TItemData>(`https://imdb-api.com/en/API/Title/${apiKey}/${id}/Trailer,Ratings`)
+
+    //* view actor
+    const viewDataInWikipedia = (name: string): MouseEventHandler<HTMLElement> => () => {
+        const url = `https://en.wikipedia.org/wiki/${name.replaceAll(' ', '_')}`
+        setUrlData([url, 'target=_blank'])
+    }
 
     return (
         <Box w='100%' p='1%' marginTop={['18%', '10%', '5%']}>
